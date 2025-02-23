@@ -43,7 +43,7 @@ export default function PodcastDashboard() {
   // Fetch user podcasts from FastAPI
   const fetchPodcasts = async () => {
     try {
-      const res = await fetch("http://127.0.0.1:8000/podcasts/", {
+      const res = await fetch("https://prathmeshpodcast-30440798035.us-central1.run.app/podcasts/", {
         headers: {
           "Content-Type": "application/json",
           "Authorization": `Bearer ${token}`,
@@ -72,7 +72,7 @@ export default function PodcastDashboard() {
     e.preventDefault();
     setIsCreating(true);
     try {
-      const res = await fetch("http://127.0.0.1:8000/podcasts/create", {
+      const res = await fetch("https://prathmeshpodcast-30440798035.us-central1.run.app/podcasts/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -98,7 +98,7 @@ export default function PodcastDashboard() {
   // Delete a podcast
   const handleDeletePodcast = async (podcastId: string) => {
     try {
-      const res = await fetch(`http://127.0.0.1:8000/podcasts/${podcastId}`, {
+      const res = await fetch(`https://prathmeshpodcast-30440798035.us-central1.run.app/podcasts/${podcastId}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -116,7 +116,7 @@ export default function PodcastDashboard() {
   // Play podcast audio: fetch audio as blob and create an Object URL
   const handlePlayPodcast = async (podcastId: string) => {
     try {
-      const res = await fetch(`http://127.0.0.1:8000/podcasts/${podcastId}/audio`, {
+      const res = await fetch(`https://prathmeshpodcast-30440798035.us-central1.run.app/podcasts/${podcastId}/audio`, {
         headers: {
           "Authorization": `Bearer ${token}`,
         },
@@ -138,7 +138,7 @@ export default function PodcastDashboard() {
         <h1 className="text-3xl font-bold">Podcast Hub</h1>
         <button
           onClick={() => {
-            localStorage.removeItem("token");
+            //localStorage.removeItem("token");
             router.push("/login");
           }}
           className="px-4 py-2 bg-red-500 hover:bg-red-600 transition duration-200 rounded"
