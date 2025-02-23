@@ -87,7 +87,7 @@ class AgentState:
     revision_number: int = 1
     max_revisions: int = 2
     search_count: int = 0
-    max_searches: int = 3
+    max_searches: int = 2
     content: list = None
     queries: list = None
     tool_calls: list = None
@@ -119,7 +119,7 @@ class PodcastGenerator:
     def __init__(self, google_api_key: str):
         self.memory = MemorySaver()
         self.model = ChatGoogleGenerativeAI(
-            model="gemini-2.0-flash-exp",
+            model="gemini-1.5-flash-latest",
             temperature=0,
             api_key=google_api_key
         )
